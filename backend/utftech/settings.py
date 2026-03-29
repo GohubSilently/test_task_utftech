@@ -11,7 +11,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
-DEBUG = os.getenv('DEBUG', 'False').lower == 'true'
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1 localhost').split()
 
 INSTALLED_APPS = [
@@ -21,9 +21,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framawork',
-    'api',
-    'food'
+    'rest_framework',
+    'api.apps.ApiConfig',
+    'food.apps.FoodConfig'
 ]
 
 MIDDLEWARE = [
@@ -62,6 +62,17 @@ if DEBUG:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('POSTGRES_DB', 'postgres'),
+            'USER': os.getenv('POSTGRES_USER', 'postgres_user'),
+            'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'postgres_password'),
+            'HOST': os.getenv('DB_HOST', 'db'),
+            'PORT': os.getenv('DB_PORT', '5432'),
+        }
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -83,4 +94,5 @@ TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = '/backend_static/'
+STATIC_ROOT = BASE_DIR / 'collected_static'
