@@ -1,10 +1,8 @@
-from django.urls import include, path
-# from rest_framework import routers
+from django.urls import path
 
+from .views import FoodListView
 
-# router = routers.DefaultRouter()
-# router.register()
 
 urlpatterns = [
-    # path('v1/', include(router.urls))
+    path('v1/foods/', FoodListView.as_view(), name='food-list')
 ]

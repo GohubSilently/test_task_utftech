@@ -1,12 +1,12 @@
 from django.db import models
 from model_utils.models import TimeStampedModel
 
-from .constants import MAX_LENGTH_NAME_DESCRIPTION
+from .constants import MAX_LENGTH_NAME_DESCRIPTION, NAME_RU
 
 
 class FoodCategory(TimeStampedModel):
     name_ru = models.CharField(
-        verbose_name='Название на русском',
+        verbose_name=NAME_RU,
         max_length=MAX_LENGTH_NAME_DESCRIPTION,
         unique=True
     )
@@ -24,7 +24,7 @@ class FoodCategory(TimeStampedModel):
         blank=True,
         null=True
     )
-    order_id = models.SmallIntegerField(
+    order_id = models.PositiveIntegerField(
         default=10,
         blank=True,
         null=True
@@ -56,10 +56,10 @@ class Food(TimeStampedModel):
         default=False
     )
 
-    code = models.IntegerField(
+    code = models.PositiveIntegerField(
         verbose_name='Код поставщика'
     )
-    internal_code = models.IntegerField(
+    internal_code = models.PositiveIntegerField(
         verbose_name='Код в приложении',
         unique=True,
         null=True,
@@ -67,7 +67,7 @@ class Food(TimeStampedModel):
     )
 
     name_ru = models.CharField(
-        verbose_name='Название на русском',
+        verbose_name=NAME_RU,
         max_length=MAX_LENGTH_NAME_DESCRIPTION
     )
     description_ru = models.CharField(
@@ -114,3 +114,4 @@ class Food(TimeStampedModel):
     class Meta:
         verbose_name = 'Блюдо'
         verbose_name_plural = 'Блюда'
+        ordering = ('code',)
