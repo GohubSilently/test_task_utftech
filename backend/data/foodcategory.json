@@ -1,0 +1,20 @@
+[
+  {
+    "name_ru": "Напитки",
+    "name_en": "Drinks",
+    "name_ch": null,
+    "order_id": 10
+  },
+  {
+    "name_ru": "Выпечка",
+    "name_en": "Bakery",
+    "name_ch": null,
+    "order_id": 20
+  },
+  {
+    "name_ru": "Десерты",
+    "name_en": "Desserts",
+    "name_ch": null,
+    "order_id": 30
+  }
+]
