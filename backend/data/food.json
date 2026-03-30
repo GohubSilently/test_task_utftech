@@ -1,0 +1,72 @@
+[
+  {
+    "name_ru": "Чай",
+    "description_ru": "Чай 100 гр.",
+    "description_en": "Tea 100 gr.",
+    "description_ch": null,
+    "cost": 123.0,
+    "is_special": false,
+    "is_vegan": false,
+    "code": 1,
+    "internal_code": 100,
+    "category_id": 1,
+    "is_publish": true,
+    "additional": 300
+  },
+  {
+    "name_ru": "Кофе",
+    "description_ru": "Кофе",
+    "description_en": "Coffe",
+    "description_ch": null,
+    "cost": 100.0,
+    "is_special": false,
+    "is_vegan": true,
+    "code": 2,
+    "internal_code": 200,
+    "category_id": 1,
+    "is_publish": false,
+    "additional": null
+  },
+  {
+    "name_ru": "Кола",
+    "description_ru": "Кола",
+    "description_en": "Cola",
+    "description_ch": null,
+    "cost": 123.0,
+    "is_special": true,
+    "is_vegan": false,
+    "code": 3,
+    "internal_code": 300,
+    "category_id": 1,
+    "is_publish": true,
+    "additional": null
+  },
+  {
+    "name_ru": "Спрайт",
+    "description_ru": "Спрайт",
+    "description_en": "Sprite",
+    "description_ch": null,
+    "cost": 300.0,
+    "is_special": false,
+    "is_vegan": true,
+    "code": 4,
+    "internal_code": 400,
+    "category_id": 1,
+    "is_publish": true,
+    "additional": 500
+  },
+  {
+    "name_ru": "Байкал",
+    "description_ru": "Байкал",
+    "description_en": "Baikal",
+    "description_ch": null,
+    "cost": 60.0,
+    "is_special": true,
+    "is_vegan": false,
+    "code": 5,
+    "internal_code": 500,
+    "category_id": 1,
+    "is_publish": false,
+    "additional": null
+  }
+]
