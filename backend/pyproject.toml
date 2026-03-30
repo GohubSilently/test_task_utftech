@@ -8,5 +8,11 @@ dependencies = [
     "django>=6.0.3",
     "django-model-utils>=5.0.0",
     "djangorestframework>=3.17.1",
+    "factory-boy>=3.3.3",
+    "pytest-django>=4.12.0",
     "python-dotenv>=1.2.2",
 ]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "utftech.settings"
+addopts = '-v'
